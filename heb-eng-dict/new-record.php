@@ -1,4 +1,10 @@
 <?
+	$CONFIG_DIR = '.';
+	require_once("$CONFIG_DIR/config.inc");
+	require_once("$CONFIG_DIR/header.inc");
+	require_once("$CONFIG_DIR/common-php-functions.inc");
+
+
 	$genders[] = 'male';
 	$genders[] = 'female';
 	$genders[] = 'neuter';
@@ -29,26 +35,30 @@
 		return $s;
 	}
 
+
+	print_header('dictionary input system');
+
 ?>
-<html>
-<head>
-<meta content="text/html; charset=windows-1255" http-equiv="content-type">
-<META NAME="Author" CONTENT="shula">
-<title>dictionary input system?</title>
-</head>
+
+
+
+
+
 
 <body>
+<? print "server time: " . time() . " <BR>\n"; ?>
+
 <h1 style="text-align: center;">hebrew to something dictionary</h1>
 learn a new entry<br>
-<form action="check_and_save_new_entry" method="get">
+<form name="tofes" action="check_and_save_new_entry.php" method="get">
 <table border="0">
 <tbody>
 <tr>
 <td>Hebrew word</td>
-<td><input name="hebrew"></td></tr>
+<td><input name="entry"></td></tr>
 <tr>
 <td>plural<br></td>
-<td><input name="hebrew_plural"></td></tr>
+<td><input name="entry_plural"></td></tr>
 </table>
 
 
@@ -92,7 +102,7 @@ learn a new entry<br>
 </tbody>
 </table>
 
-<input type=submit>
+<input type=submit name=submit value='go for it'>
 
 </form>
 </body>
